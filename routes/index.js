@@ -1,9 +1,11 @@
-const express = require('express');
-const router  = express.Router();
+const { Router } = require('express')
+const router = Router()
 
-/* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
-});
+const {
+  homeView
+
+} = require('../controllers/index.controller')
+
+router.get('/', homeView)
 
 module.exports = router;
