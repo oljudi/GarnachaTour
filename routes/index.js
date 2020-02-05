@@ -3,7 +3,6 @@ const router = Router()
 
 const {
   homeView
-
 } = require('../controllers/index.controller')
 
 router.get('/', homeView)

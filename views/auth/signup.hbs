@@ -3,11 +3,13 @@
     <div class="card-body">
       <h2 class="card-title">{{title}}</h2>
       <h6 class="card-subtitle mb-2 text-muted">Sign Up</h6><br>
-      <form action="/signUp" method="POST">
+      <form action="/signup" method="POST">
         <div class="input-group flex-nowrap">
           <br>
           <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">person</span>
+            <span class="input-group-text" id="addon-wrapping">
+              <i class="fas fa-user-tag"></i>
+            </span>
           </div>
           <input type="text" name="name" class="form-control" placeholder="Name">
         </div>
@@ -21,11 +23,33 @@
         <br><br>
         <div class="input-group flex-nowrap">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping">key</span>
+            <span class="input-group-text" id="addon-wrapping">
+              <i class="fas fa-key"></i>
+            </span>
           </div>
           <input type="password" name="password" class="form-control" placeholder="Password">
         </div>
         <br><br>
+        <label>Preferred Colony</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text">
+              <i class="fas fa-map-marked"></i>
+            </label>
+          </div>
+          <select class="custom-select" name="colony">
+            <option selected>Choose one...</option>
+            <option value="Del Valle">Del Valle</option>
+            <option value="La Roma">La Roma</option>
+            <option value="SantaFe">SantaFe</option>
+          </select>
+        </div>
+        <br><br>
+        {{#if message}}
+        <div class="alert alert-danger" role="alert">
+          {{message}}
+        </div>
+        {{/if}}
         <button class="btn btn-primary" type="submit">Sign Up</button>
       </form>
     </div>
