@@ -1,11 +1,13 @@
 <div class="card">
-  <div class="card-body">
-    <h4 class="card-title">{{view}}</h4>
+  <div class="headerdiv card-body">
+    <h4 class="header1 d-flex flex-row justify-content-center align-items-center card-title">{{view}}</h4>
   </div>
 </div>
 <p>Complete this list and earn a badge!</p>
-<div class="card">
-  <img class="card-img-top" src="" alt='badge_{{{view}}}'>
+<div class="firstcard card">
+  <div class="divbadge">
+  <img class="card-img-top" src="/images/badge.png" alt='badge_{{{view}}}'>
+  </div>
   <div class="card-body">
     {{#each types}}
     <div class="input-group mb-3">
@@ -17,7 +19,6 @@
       <p class="form-control">{{this}}</p>
     </div>
     {{/each}}
+    <a href="/groute" type="button" class="badgebutt btn btn-block">Let's Go</a>
   </div>
 </div>
-
-<a href="/groute" type="button" class="btn btn-warning">Let's Go</a>
