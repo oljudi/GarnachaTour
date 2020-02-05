@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const Place = require('../models/Place')
 
 exports.homeView = (req, res, next) => {
   res.render('garnacha/home', {
@@ -30,10 +31,9 @@ exports.searchPost = async (req,res,next) => {
 
 exports.searchView = async (req,res,next) => {
   const idSearch = req.params.idSearch
-  res.render('garnacha/search',{
-    user: req.user,
-    search: idSearch
-  })
+  const mayus = idSearch.toUpperCase()
+  const data = await Place.find({nomb_asent: mayus})
+  res.render('garnacha/search', {data})
 }
 
 exports.tcsView = async (req,res,next) => {

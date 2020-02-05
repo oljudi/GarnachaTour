@@ -6,6 +6,10 @@ const {
   loginView,
   signUpView,
   signUpPost,
+  profileView,
+  profilePost,
+  savedView,
+  savedPost,
   logout
 } = require('../controllers/auth.controller')
 
@@ -20,6 +24,12 @@ router.post('/login',
     failureFlash: true
   })
 )
+
+router.get('/profile', profileView)
+router.post('/profile', profilePost)
+
+router.get('/saved', savedView)
+router.post('/saved', savedPost)
 
 router.get('/logout', logout)
 

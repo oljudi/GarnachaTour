@@ -14,7 +14,7 @@ const flash        = require('connect-flash')
 
 
 mongoose
-  .connect('mongodb://localhost/garnachatour', {
+  .connect(process.env.DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

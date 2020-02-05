@@ -1,1 +1,5 @@
-<h1>Resultados de "{{search}}"</h1>
+<div class="card-columns">
+{{#each data as |place|}}
+  {{> viewResult place}}
+{{/each}}
+</div>

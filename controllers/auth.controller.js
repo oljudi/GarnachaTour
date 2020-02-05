@@ -9,7 +9,6 @@ exports.signUpView = (req,res,next) => {
 }
 
 exports.signUpPost = async (req,res,next) => {
-  console.log(req.body)
   const {name, email, password, colony} = req.body
   if(email === '' || password === ''){
     res.render('auth/signup', { 
@@ -24,6 +23,23 @@ exports.signUpPost = async (req,res,next) => {
   }
   await User.register({name, email, colony}, password)
   res.redirect('/login')
+}
+
+exports.profileView = async (req,res,next) => {
+  const user = req.user
+  res.render('auth/profile', {user})
+}
+
+exports.profilePost = async (req,res,next) => {
+
+}
+
+exports.savedView = async (req,res,next) => {
+  res.render('auth/saved')
+}
+
+exports.savedPost = async (req,res,next) => {
+
 }
 
 exports.logout = (req,res) => {
