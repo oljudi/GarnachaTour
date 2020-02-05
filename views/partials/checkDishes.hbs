@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{view}}</h4>
+  </div>
+</div>
+<p>Complete this list and earn a badge!</p>
+<div class="card">
+  <img class="card-img-top" src="" alt='badge_{{{view}}}'>
+  <div class="card-body">
+    {{#each types}}
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="checkbox">
+        </div>
+      </div>
+      <p class="form-control">{{this}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+<a href="/groute" type="button" class="btn btn-warning">Let's Go</a>

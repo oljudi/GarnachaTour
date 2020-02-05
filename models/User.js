@@ -10,7 +10,7 @@ const userSchema = new Schema(
       enum: ['Del Valle', 'La Roma', 'SantaFe']
     },
     price: {
-      default: '10',
+      default: '50-250',
       enum: ['50-250','260-450','+500'],
       type: String
     },

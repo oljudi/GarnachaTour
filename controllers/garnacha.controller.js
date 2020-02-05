@@ -1,7 +1,9 @@
 const User = require('../models/User')
 
 exports.homeView = (req, res, next) => {
-  res.render('garnacha/home')
+  res.render('garnacha/home', {
+    user: req.user
+  })
 }
 
 exports.filterView = (req,res,next) => {
@@ -22,6 +24,53 @@ exports.filterPost = async (req,res,next) => {
 }
 
 exports.searchPost = async (req,res,next) => {
-  res.send(req.body)
+  const {search} = req.body
+  res.redirect(`/search/${search}`)
 }
+
+exports.searchView = async (req,res,next) => {
+  const idSearch = req.params.idSearch
+  res.render('garnacha/search',{
+    user: req.user,
+    search: idSearch
+  })
+}
+
+exports.tcsView = async (req,res,next) => {
+  res.render('partials/checkDishes', {
+    user: req.user,
+    view: 'Tacos',
+    types: ['Taco de Pastor', 'Taco de Suadero', 'Tacos de Guisados']
+  })
+}
+exports.enchView = async (req,res,next) => {
+  res.render('partials/checkDishes', {
+    user: req.user,
+    view: 'Enchiladas',
+    types: ['Enchiladas Rojas', 'Enchiladas Verdes', 'Enchiladas de Mole']
+  })
+}
+exports.sopView = async (req,res,next) => {
+  res.render('partials/checkDishes', {
+    user: req.user,
+    view: 'Sopas',
+    types: ['Sopa Azteca']
+  })
+}
+exports.burrView = async (req,res,next) => {
+  res.render('partials/checkDishes', {
+    user: req.user,
+    view: 'Burritos',
+    types: ['Burrito de Carne']
+  })
+}
+exports.chqView = async (req,res,next) => {
+  res.render('partials/checkDishes', {
+    user: req.user,
+    view: 'Chilaquiles',
+    types: ['Chilaquiles Rojos', 'Chilaquiles Verdes']
+  })
+}
+
+
 

@@ -7,16 +7,35 @@
             <i class="fas fa-search-location"></i>
           </span>
         </div>
-        <input type="text" class="form-control" name="search" onkeypress="runSearch(event)">
+        <input id="inputSearch" type="text" class="form-control" name="search" placeholder= 'Try "Tacos al pastor"'>
       </div>
+      <input id="btnEnter" type="submit" hidden>
     </form>
   </div>
 </div>
 
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">
+      'Imagen de taquitos mamona'
+      Comienza aqui
+    </h4>
+    <p class="card-text">
+      <a href="/tacos">Tacos</a>
+      <a href="/enchiladas">Enchiladas</a>
+      <a href="/sopas">Sopas</a>
+      <a href="/burritos">Burritos</a>
+      <a href="/chilaquiles">Chilaquiles</a>
+    </p>
+  </div>
+</div>
+
 <script>
-  function runSearch(e){
-    if(e.keyCode == 13){
-      const search = document.getElementById
+  const input = document.getElementById('inputSearch')
+  input.addEventListener('keyup', (e) => {
+    if(e.keyCode === 13){
+      e.preventDefault()
+      document.getElementById('btnEnter').click()
     }
-  }
+  })
 </script>

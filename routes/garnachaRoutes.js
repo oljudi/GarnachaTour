@@ -5,7 +5,13 @@ const {
   homeView,
   filterView,
   filterPost,
-  searchPost
+  searchView,
+  searchPost,
+  tcsView,
+  enchView,
+  sopView,
+  burrView,
+  chqView
 } = require('../controllers/garnacha.controller')
 
 router.get('/groute', homeView)
@@ -13,5 +19,13 @@ router.get('/groute', homeView)
 router.get('/filter', filterView)
 router.post('/filter', filterPost)
 
+router.get('/search/:idSearch', searchView)
 router.post('/search', searchPost)
+
+router.get('/tacos',tcsView)
+router.get('/enchiladas', enchView)
+router.get('/sopas', sopView)
+router.get('/burritos', burrView)
+router.get('/chilaquiles', chqView)
+
 module.exports = router
