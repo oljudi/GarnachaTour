@@ -1,0 +1,57 @@
+<section class="filter_section">
+  <div class="card " style="width: 18rem;">
+    <div class="card-body">
+      <h2 class="card-title">{{title}}</h2>
+      <h6 class="card-subtitle mb-2 text-muted">Filter</h6>
+      <form action="/filter" method="POST">
+        <br>
+        <label>Colony</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text">
+              <i class="fas fa-map-marked"></i>
+            </label>
+          </div>
+          <select class="custom-select" name="colony">
+            <option selected>Choose one...</option>
+            {{#each colony}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <br><br>
+        <label>Price</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text">
+              <i class="fas fa-dollar-sign"></i>
+            </label>
+          </div>
+          <select class="custom-select" name="price">
+            <option selected>Choose one...</option>
+            {{#each price}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <br><br>
+        <label>Spicy Level</label>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text">
+              <i class="fas fa-pepper-hot"></i>
+            </label>
+          </div>
+          <select class="custom-select" name="spicy">
+            <option selected>Choose one...</option>
+            {{#each spicyLevel}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <br><br>
+        <button class="btn btn-primary btn-block" type="submit">Start</button>
+      </form>
+    </div>
+  </div>
+</section>
