@@ -1,7 +1,7 @@
 <section class="login_section">
   <div class="card " style="width: 18rem;">
     <div class="card-body">
-      <h2 class="card-title">{{title}}</h2>
+      <h2 class="card-title"><img class="logo" src="/images/Logo Garnacha Route.png"></h2>
       <h6 class="card-subtitle mb-2 text-muted">Log In</h6>
       <form action="/login" method="POST">
         <br>
@@ -26,7 +26,8 @@
           {{message}}
         </div>
         {{/if}}
-        <button class="btn btn-primary" type="submit">Log in</button>
+        <button class="btn btn-primary btn-block" type="submit">Log in</button><br>
+        Don't have an account? <a type="button" href="/signup" class="btn btn-primary btn-block">Sign Up</a>
       </form>
     </div>
   </div>

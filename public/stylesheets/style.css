@@ -1,5 +1,9 @@
+* {
+  padding: 0;
+  margin: 0; }
+
 .login_section {
-  margin-top: 40px;
+  margin-top: 0px;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -7,5 +11,21 @@
   align-items: center;
   width: 100%;
   height: auto; }
+
+.logo {
+  width: 200px;
+  height: 150px; }
+
+.card {
+  border: 0px;
+  padding: 0px;
+  margin-bottom: 55px; }
+
+.navbar {
+  background-color: #E63F85;
+  height: 65px; }
+  .navbar div {
+    color: white;
+    width: 100vw; }
 
 /*# sourceMappingURL=style.css.map */
