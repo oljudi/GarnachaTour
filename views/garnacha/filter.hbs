@@ -1,7 +1,7 @@
 <section class="filter_section">
   <div class="card " style="width: 18rem;">
     <div class="card-body">
-      <h2 class="card-title">{{title}}</h2>
+      <h2 class="card-title"><img class="logo" src="/images/Logo.png"></h2>
       <h6 class="card-subtitle mb-2 text-muted">Filter</h6>
       <form action="/filter" method="POST">
         <br>
@@ -19,7 +19,6 @@
             {{/each}}
           </select>
         </div>
-        <br><br>
         <label>Price</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -34,7 +33,6 @@
             {{/each}}
           </select>
         </div>
-        <br><br>
         <label>Spicy Level</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
@@ -49,7 +47,6 @@
             {{/each}}
           </select>
         </div>
-        <br><br>
         <button class="btn btn-primary btn-block" type="submit">Start</button>
       </form>
     </div>
