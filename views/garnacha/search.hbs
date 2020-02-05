@@ -1,5 +1,11 @@
+{{#if data}}
 <div class="card-columns">
-{{#each data as |place|}}
+  {{#each data as |place|}}
   {{> viewResult place}}
-{{/each}}
+  {{/each}}
 </div>
+{{else}}
+<div class="alert alert-primary" role="alert">
+  <strong>Cannot find nothing, please try again e.g. 'Polanco'</strong>
+</div>
+{{/if}}

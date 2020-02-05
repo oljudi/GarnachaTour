@@ -33,7 +33,12 @@ exports.searchView = async (req,res,next) => {
   const idSearch = req.params.idSearch
   const mayus = idSearch.toUpperCase()
   const data = await Place.find({nomb_asent: mayus})
-  res.render('garnacha/search', {data})
+  if(data !== null){
+    const dishes = await Place.find()
+    res.render('garnacha/search', {data})
+  } else {
+    res.render('garnacha/search', {message: 'No encontre resultados'})
+  }
 }
 
 exports.tcsView = async (req,res,next) => {
@@ -71,6 +76,3 @@ exports.chqView = async (req,res,next) => {
     types: ['Chilaquiles Rojos', 'Chilaquiles Verdes']
   })
 }
-
-
-
