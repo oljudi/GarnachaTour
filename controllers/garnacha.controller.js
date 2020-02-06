@@ -32,6 +32,9 @@ exports.searchPost = async (req,res,next) => {
 
 exports.searchView = async (req,res,next) => {
   const idSearch = req.params.idSearch
+  if( idSearch === 'TacodePastor'){
+    res.redirect('/dishView')
+  }
   const mayus = idSearch.toUpperCase()
   const data = await Place.find({nomb_asent: mayus})
   // const dishes = await Dish.find({name: idSearch})

@@ -11,6 +11,7 @@ const path         = require('path');
 const session      = require('express-session')
 const passport     = require('./config/passport')
 const flash        = require('connect-flash')
+const { isAuthenticated, checkRole } = require("./middlewares/index")
 
 
 mongoose
@@ -47,10 +48,6 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.use((req, res, next) => {
-  console.log(req.user);
-  next();
-});
 // Express View engine setup
 
 app.use(require('node-sass-middleware')({
@@ -78,7 +75,7 @@ app.use('/', index);
 const auth = require('./routes/authRoutes')
 app.use('/', auth)
 const garnacha = require('./routes/garnachaRoutes')
-app.use('/', garnacha)
+app.use('/', isAuthenticated,garnacha)
 
 
 module.exports = app;
