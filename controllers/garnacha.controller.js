@@ -1,5 +1,6 @@
 const User = require('../models/User')
 const Place = require('../models/Place')
+const Dish = require('../models/Dishes')
 
 exports.homeView = (req, res, next) => {
   res.render('garnacha/home', {
@@ -33,12 +34,21 @@ exports.searchView = async (req,res,next) => {
   const idSearch = req.params.idSearch
   const mayus = idSearch.toUpperCase()
   const data = await Place.find({nomb_asent: mayus})
+  // const dishes = await Dish.find({name: idSearch})
   if(data !== null){
-    const dishes = await Place.find()
-    res.render('garnacha/search', {data})
-  } else {
-    res.render('garnacha/search', {message: 'No encontre resultados'})
+    res.render('garnacha/search', {
+      user: req.user,
+      data: data,
+    })
   }
+}
+
+exports.dishView = async (req, res, next) => {
+  const dishes = await Dish.find({name: 'TacodePastor'})
+  res.render('garnacha/dishView', {
+    user: req.user,
+    data: dishes,
+  })
 }
 
 exports.tcsView = async (req,res,next) => {

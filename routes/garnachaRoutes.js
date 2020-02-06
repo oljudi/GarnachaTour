@@ -7,6 +7,7 @@ const {
   filterPost,
   searchView,
   searchPost,
+  dishView,
   tcsView,
   enchView,
   sopView,
@@ -21,6 +22,8 @@ router.post('/filter', filterPost)
 
 router.get('/search/:idSearch', searchView)
 router.post('/search', searchPost)
+
+router.get('/dishView', dishView)
 
 router.get('/tacos',tcsView)
 router.get('/enchiladas', enchView)
